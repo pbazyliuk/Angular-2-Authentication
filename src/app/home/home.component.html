@@ -11,6 +11,6 @@
   </ul>
 
   <!-- create buttons for Log In and Log Out -->
-  <!--<button class="btn btn-primary" routerLink="/login">Log In</button>
-  <button class="btn btn-primary" (click)="auth.logout()" routerLink="/home">Log Out</button>-->
+ <p><a class="btn btn-primary btn-lg" routerLink="/login" *ngIf="!auth.isAuthenticated()" role="button">Log In</a></p>
+ <p><a class="btn btn-primary btn-lg" (click)="auth.logout()" *ngIf="auth.isAuthenticated()" role="button">Log Out</a></p>
 </div>

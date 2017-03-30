@@ -7,10 +7,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav pull-right">
         <!-- create links for Log In and Log Out -->
-        <li>
+        <li *ngIf="!auth.isAuthenticated()">
           <a routerLink="/login">Log In</a>
         </li>
-        <li (click)="auth.logout()">
+        <li *ngIf="auth.isAuthenticated()" (click)="auth.logout()">
           <a routerLink="/home">Log Out</a>
         </li>
       </ul>      
