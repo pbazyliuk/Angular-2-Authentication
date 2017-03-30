@@ -5,9 +5,11 @@
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
       <ul class="nav navbar-nav pull-right">
+         <li *ngIf="auth.isAuthenticated()"><a routerLink="/instructor">Instructors</a></li>
         <li *ngIf="auth.isAuthenticated()">
-          <a routerLink="/profile">Profile</a>
+          <a routerLink="/profile">Profile </a>
         </li>
         <!-- create links for Log In and Log Out -->
         <li *ngIf="!auth.isAuthenticated()">
