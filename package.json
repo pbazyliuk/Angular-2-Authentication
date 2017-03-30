@@ -27,7 +27,7 @@
     "bootstrap": "^3.3.7",
     "jwt-decode": "^2.1.0",
     "md5": "^2.2.1",
-    "ng2-bootstrap": "^1.1.16",
+    "ng2-bootstrap": "1.1.16",
     "ts-helpers": "^1.1.1"
   },
   "devDependencies": {

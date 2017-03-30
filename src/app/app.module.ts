@@ -30,7 +30,7 @@ import { AuthService } from './auth/auth.service';
   providers: [
     AuthService,
     provideAuth({
-      tokenGetter: () => { return localStorage.getItem('token') }
+      tokenGetter: function() { return localStorage.getItem('token') }
     }),
   ],
   bootstrap: [AppComponent]

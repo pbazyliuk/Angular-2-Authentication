@@ -1,5 +1,5 @@
-<div class="col-sm-6 col-sm-offset-3">
-  <tabset>
+
+  <tabset class="col-sm-6 col-sm-offset-3">
     <tab heading='Log In'>
       <form #loginForm="ngForm" (ngSubmit)="onLoginSubmit(loginForm.value)">
         <div class="form-group">
@@ -33,4 +33,3 @@
       <alert *ngIf="errorMessage" type="danger">{{ errorMessage }}</alert>
     </tab>
   </tabset>
-</div>
