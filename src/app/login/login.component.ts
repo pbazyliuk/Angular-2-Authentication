@@ -26,6 +26,7 @@ export class LoginComponent {
   }
 
   onSignupSubmit(credentials) {
+    credentials.admin = true;
     this.auth.signup(credentials)
       .map(res => res.json())
       .subscribe (
