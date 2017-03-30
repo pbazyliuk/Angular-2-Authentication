@@ -16,6 +16,8 @@ import { InstructorComponent } from './instructor/instructor.component';
 import { NewInstructorComponent } from './new-instructor/new-instructor.component';
 
 import { AuthService } from './auth/auth.service';
+import { AuthGuard } from './auth/authguard.service';
+import { RoleGuard } from './auth/roleguard.service';
 import { InstructorService } from './instructor/instructor.service';
 
 @NgModule({
@@ -38,9 +40,11 @@ import { InstructorService } from './instructor/instructor.service';
   providers: [
     AuthService,
     provideAuth({
-      tokenGetter: function() { return localStorage.getItem('token') }
+      tokenGetter: () => { return localStorage.getItem('token') }
     }),
-    InstructorService
+    InstructorService,
+    AuthGuard,
+    RoleGuard
   ],
   bootstrap: [AppComponent]
 })

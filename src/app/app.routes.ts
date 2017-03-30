@@ -4,13 +4,15 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { InstructorComponent } from './instructor/instructor.component';
 import { NewInstructorComponent } from './new-instructor/new-instructor.component';
+import { AuthGuard } from './auth/authguard.service';
+import { RoleGuard } from './auth/roleguard.service';
 
 export const ROUTES: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent }, 
   { path: 'profile', component: ProfileComponent },
-  { path: 'instructor', component: InstructorComponent },
-  { path: 'instructor/new', component: NewInstructorComponent }
+  { path: 'instructor', component: InstructorComponent, canActivate: [AuthGuard] },
+  { path: 'instructor/new', component: NewInstructorComponent, canActivate: [RoleGuard] }
   
 ];

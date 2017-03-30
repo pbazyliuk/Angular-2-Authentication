@@ -44,4 +44,7 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
+  isAdmin(): boolean {
+    return jwtDecode(this.getToken()).scope === 'admin';
+  }
 }
